@@ -47,8 +47,6 @@ def thesaurize(word):
     synonyms_list = list(set(synonyms_list))
     if word in synonyms_list:
         synonyms_list.remove(word)
-    # Print the original word and the number of synonyms.
-    print(f"{word}: {len(synonyms_list)} synonyms")
     if synonyms_list:
         word = random.choice(synonyms_list)
 
@@ -84,5 +82,7 @@ def thesaurize_sentence(sentence):
         thesaurized_words.append(thesaurize(word))
     return ' '.join(thesaurized_words)
 
-sentence = "Own a musket for home defense, since that's what the founding fathers intended. Four ruffians break into my house. \"What the devil?\" As I grab my powdered wig and Kentucky rifle. Blow a golf ball sized hole through the first man, he's dead on the spot. Draw my pistol on the second man, miss him entirely because it's smoothbore and nails the neighbors dog. I have to resort to the cannon mounted at the top of the stairs loaded with grape shot, \"Tally ho lads\" the grape shot shreds two men in the blast, the sound and extra shrapnel set off car alarms. Fix bayonet and charge the last terrified rapscallion. He Bleeds out waiting on the police to arrive since triangular bayonet wounds are impossible to stitch up. Just as the founding fathers intended."
+# Get user input
+sentence = input('Enter a sentence: ')
+# Thesaurize the sentence and print back to console
 print(thesaurize_sentence(sentence))
