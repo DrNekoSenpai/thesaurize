@@ -84,5 +84,6 @@ def thesaurize_sentence(sentence):
 
 # Get user input
 sentence = input('Enter a sentence: ')
+print()
 # Thesaurize the sentence and print back to console
 print(thesaurize_sentence(sentence))
