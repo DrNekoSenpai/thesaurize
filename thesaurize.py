@@ -64,9 +64,7 @@ def thesaurize(word):
         else:
             word = word[:special_character_positions[i]] + special_characters[special_character_indexes[i]] + word[special_character_positions[i]:]
     
-    # Finally, we should check if the word has any underscores in them. If so, we should replace them with spaces.
-    # if '_' in word:
-    #     word = word.replace('_', ' ')
+    word = word.replace('_', ' ')
 
     return word
 
@@ -76,6 +74,9 @@ def thesaurize_sentence(sentence):
     if not sentence:
         return ''
     
+    # We should check if any of the words have a dash in them. If so, replace the dash with a space.
+    sentence = sentence.replace('-', ' ')
+    
     words = sentence.split()
     thesaurized_words = []
     for word in words:
@@ -84,6 +85,6 @@ def thesaurize_sentence(sentence):
 
 # Get user input
 sentence = input('Enter a sentence: ')
-print()
+print("")
 # Thesaurize the sentence and print back to console
 print(thesaurize_sentence(sentence))
